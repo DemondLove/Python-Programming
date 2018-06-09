@@ -1,2 +1,2 @@
 # Python-Programming
-Python Development Algorithms
+Python HackerRank and CodeFights Algorithms
