@@ -29,8 +29,4 @@ Constraints:
 
 class Solution:
     def findNumbers(self, nums: List[int]) -> int:
-        num_even = 0
-        for x in nums:
-            if len(str(x))%2 == 0:
-                num_even+=1
-        return num_even
+        return len([x for x in nums if len(str(x))%2 == 0])
