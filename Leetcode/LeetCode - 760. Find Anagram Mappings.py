@@ -22,10 +22,12 @@ class Solution:
     def anagramMappings(self, A: List[int], B: List[int]) -> List[int]:
         li = []
         
-        for a in A:
-            for b in B:
-                if a == b:
-                    li.append(B.index(b))
-                    break       
-                    
+        idx_map = {}
+        
+        for idx, num in enumerate(B):
+            idx_map[num] = idx
+        
+        for num in A:
+            li.append(idx_map[num])
+        
         return li
