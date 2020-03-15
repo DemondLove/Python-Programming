@@ -27,21 +27,9 @@ Guaranteed constraints:
 '''
 
 def absoluteValuesSumMinization(a):
-    min = 0
-    for p in range(len(a)):
-        cnt = 0
-
-        for k in range(len(a)):
-            cnt += abs(a[k]-a[p])
-
-        if p == 0:
-            curMinCnt = cnt
-            curMinVal = a[p]
-        elif cnt < curMinCnt:
-            curMinCnt = cnt
-            curMinVal = a[p]
-        elif cnt == curMinCnt and a[p] < curMinVal:
-            curMinCnt = cnt
-            curMinVal = a[p]
-
-    return curMinVal
+    if len(a) <= 2:
+        return a[0]
+    elif len(a)%2 == 0:
+        return a[(len(a)//2)-1]
+    else:
+        return a[len(a)//2]
