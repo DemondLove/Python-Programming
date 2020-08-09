@@ -23,11 +23,12 @@ It's guaranteed that for the given test cases the answer always fits signed 32-b
 '''
 
 def arrayChange(inputArray):
-    ctr = 0
-    for i in range(1,len(inputArray)):
-        if inputArray[i-1] >= inputArray[i]:
-            inc = inputArray[i-1] - inputArray[i] + 1
-            inputArray[i] = inputArray[i]+inc
-            ctr+=inc
+    
+    moves = 0
 
-    return ctr
+    for x in range(1, len(inputArray)):
+        while inputArray[x-1] >= inputArray[x]:
+            inputArray[x] += 1
+            moves += 1
+
+    return moves
